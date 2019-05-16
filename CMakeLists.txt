@@ -50,6 +50,9 @@ set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake/modules)
 # WIRESHARK_TARGET_PLATFORM accordingly. Otherwise use
 # %WIRESHARK_TARGET_PLATFORM%.
 
+#jicheng
+set(ENV{PLATFORM} x64)
+
 if(WIN32)
 	find_package(PowerShell REQUIRED)
 
@@ -66,9 +69,6 @@ if(WIN32)
 	else()
 		set(WIRESHARK_TARGET_PROCESSOR_ARCHITECTURE x86)
 	endif()
-
-	#jicheng
-	set(ENV{PLATFORM} x64)
 
 	# Sanity check
 	if(DEFINED ENV{PLATFORM})
